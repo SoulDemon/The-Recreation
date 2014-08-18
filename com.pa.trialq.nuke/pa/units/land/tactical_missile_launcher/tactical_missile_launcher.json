@@ -1,0 +1,110 @@
+{
+  "base_spec": "/pa/units/land/base_structure/base_structure.json",
+  "display_name": "NukaPult",
+  "description": "Tactical Anti Nuke Missile launcher- Equipped with advanced long range anti-nuke missiles.",
+  "max_health": 1500,
+  "build_metal_cost": 800,
+  "atrophy_rate": 30,
+  "atrophy_cool_down": 15,
+  "spawn_layers": "WL_AnyHorizontalGroundOrWaterSurface",
+  "buildable_projectiles": [
+    "/pa/units/land/anti_nuke_launcher/anti_nuke_launcher_ammo.json"
+  ],
+  "factory_cooldown_time": 5,
+  "factory": {
+    "store_units": true,
+    "spawn_points": [
+      "socket_missile01",
+      "socket_missile02",
+      "socket_missile03"
+    ],
+    "initial_build_spec": "/pa/units/land/anti_nuke_launcher/anti_nuke_launcher_ammo.json",
+    "default_build_stance": "Continuous"
+  }, 
+  "unit_types": [
+    "UNITTYPE_Land",
+    "UNITTYPE_Structure",
+    "UNITTYPE_Defense",
+    "UNITTYPE_NukeDefense",
+    "UNITTYPE_Advanced",
+    "UNITTYPE_Factory",
+    "UNITTYPE_FabAdvBuild"
+  ],
+
+  "command_caps": [
+    "ORDER_FactoryBuild"
+  ],
+  "guard_radius": 510,
+  "guard_layer": "WL_AnySurface",
+  "recon": {
+    "observer": {
+      "items": [
+        {
+          "layer": "surface_and_air",
+          "channel": "sight",
+          "shape": "capsule",
+          "radius": 100
+        },
+        {
+          "layer": "surface_and_air",
+          "channel": "radar",
+          "shape": "capsule",
+          "radius": 310
+        }
+      ]
+    }
+  },
+
+  "model": [
+    {
+      "layer": "WL_LandHorizontal",
+      "filename": "/pa/units/land/tactical_missile_launcher/tactical_missile_launcher.papa",
+      "animations": {
+        "start": "/pa/units/land/tactical_missile_launcher/tactical_missile_launcher_anim_start.papa",
+        "end": "/pa/units/land/tactical_missile_launcher/tactical_missile_launcher_anim_end.papa"
+      },
+      "animtree": "/pa/anim/anim_trees/tactical_missile_launcher_anim_tree.json",
+      "skirt_decal": "/pa/effects/specs/skirt_08.json"
+    },
+    {
+      "layer": "WL_WaterSurface",
+      "filename": "/pa/units/sea/tactical_missile_launcher/tactical_missile_launcher.papa",
+      "animations": {
+        "start": "/pa/units/land/tactical_missile_launcher/tactical_missile_launcher_anim_start.papa",
+        "end": "/pa/units/land/tactical_missile_launcher/tactical_missile_launcher_anim_end.papa"
+      },
+      "animtree": "/pa/anim/anim_trees/tactical_missile_launcher_anim_tree.json"
+    }
+  ],
+  "tools": [
+    {
+      "spec_id": "/pa/units/land/tactical_missile_launcher/tactical_missile_launcher_tool_weapon.json",
+      "aim_bone": "bone_missile01",
+      "muzzle_bone": "bone_missile01"
+    }
+  ],
+  "events": {
+    "build_complete": {
+      "audio_cue": "/SE/Build_Complete/factory"
+    },
+    "fired": {
+      "audio_cue": "/SE/Weapons/structure/tact_mis_launcher_catapult_fire",
+      "effect_spec": "/pa/units/land/tactical_missile_launcher/tactical_missile_launcher_launch.pfx"
+    },
+    "died": {
+      "audio_cue": "/SE/Death/Factory",
+      "effect_scale": 0.8
+    }
+  },
+  "audio": {
+    "selection_response": {
+      "cue": "/SE/Selection/structure/artillery"
+    }
+  },
+  "TEMP_texelinfo": 15.8261,
+  "mesh_bounds": [
+    9,
+    9,
+    8.7
+  ]
+}

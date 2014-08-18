@@ -1,0 +1,19 @@
+{
+    "context": "server",
+    "identifier": "com.pa.trialq.nuke",
+    "display_name": "TheReCreation",
+    "description": "YussUnits",
+    "author": "JetFox",
+    "version": "0.1.2",
+    "build": "68568",
+    "date": "2014/07/09",
+    "forum": "https://forums.uberent.com/threads/wip-up-to-11-server-mod.60017/",
+    "signature": "not yet implemented",
+    "category": [
+        "in-game",
+        "server-mod"
+    ],
+    "id": "nuke",
+    "priority": 100,
+    "enabled": true
+}

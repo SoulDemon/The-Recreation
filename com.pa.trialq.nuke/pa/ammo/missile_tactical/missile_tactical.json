@@ -1,0 +1,39 @@
+{
+  "ammo_type": "AMMO_Projectile",
+  "flight_type": "Seeking",
+  "spawn_layers": "WL_Air",
+  "model": {
+    "filename": "/pa/units/air/missile_nuke/missile_nuke.papa"
+  },
+"fx_trail": {
+    "filename": "/pa/units/air/missile_nuke/missile_nuke_trail.pfx",
+    "offset": [
+      0,
+      12,
+      0
+    ]
+  },  "physics": {
+    "radius": 1,
+    "push_class": 1,
+    "gravity_scalar": 5,
+    "ignore_gravity": true,
+    "allow_underground": true
+  },"events": {
+    "collided": {
+      "audio_cue": "/SE/Impacts/missile_seeking",
+      "effect_spec": "/pa/units/air/missile_nuke/missile_nuke_implosion.pfx",
+      "effect_world_aligned": false
+    }
+  },
+  "audio_loop": "/SE/Movement/missile/nuke_missile_fly_loop",
+  "armor_damage_map": {
+    "AT_Commander": 0.33
+  },
+  "damage": 500,
+  "splash_damage": 500,
+  "splash_radius": 19,
+  "lifetime": 30,
+  "initial_velocity": 70,
+  "max_velocity": 70,
+  "turn_rate": 150
+}
